@@ -9,6 +9,8 @@ import Personal from '../pages/personal'
 import DownLoad from '../pages/downLoad'
 import Search from '../pages/search'
 import ClassifyItem from '../pages/classify/classifyItem/ClassifyItem'
+import PhoneLogin from '../pages/login/phoneLogin/index'
+import EmailLogin from '../pages/login/emailLogin/index'
 
 
 
@@ -18,28 +20,49 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/home'
+      redirect: '/download'
+    },
+    {
+      path: '/phonelogin',
+      component: PhoneLogin
+    },
+    {
+      path: '/emaillogin',
+      component: EmailLogin
     },
     {
       path: '/home',
-      component: Home
+      component: Home,
+      meta: {
+        showFooter: true
+      }
     },
     {
       path: '/knowthings',
-      component: KnowThings
+      component: KnowThings,
+      meta: {
+        showFooter: true
+      }
     },
     {
       path: '/shopcart',
-      component: ShopCart
+      component: ShopCart,
+      meta: {
+        showFooter: true
+      }
     },
     {
       path: '/classify',
       component: Classify,
+
       children: [
         {
-        path: 'classifyitem/:id',
-        component: ClassifyItem,
-      }
+          path: 'classifyitem/:id',
+          component: ClassifyItem,
+          meta: {
+            showFooter: true
+          },
+        }
       ]
     },
     {
@@ -54,5 +77,11 @@ export default new Router({
       path: '/search',
       component: Search
     },
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+   return {
+     x: 0,
+     y: 0
+   }
+  }
 })

@@ -1,26 +1,19 @@
 <template>
   <div class="container">
-    <header class="header-detail border-1px">
-      <div class="header-top">
-        <div class="home" @click="pathTo('/home')"></div>
-        <div class="logo" @click="pathTo('/home')"></div>
-        <div class="search" @click="toSearch()"></div>
-        <div class="cart" @click="pathTo('/shopcart')"></div>
-      </div>
-    </header>
+    <header-reuse />
     <div class="main">
       <div class="logo">
         <div>
           <img src="//yanxuan.nosdn.127.net/bd139d2c42205f749cd4ab78fa3d6c60.png" alt="">
         </div>
       </div>
-      <div class="login">
+      <div class="login" @click="toLogin('/phonelogin')">
         <span class="icon-item">
           <i class="iconfont icon-phone"></i>
         </span>
         <span>手机号码登陆</span>
       </div>
-      <div class="email-login login">
+      <div class="email-login login" @click="toLogin('/emaillogin')">
         <span class="icon-item">
           <i class="iconfont icon-tubiao209"></i>
         </span>
@@ -59,15 +52,16 @@
 </template>
 
 <script>
+  import HeaderReuse from '../../components/header/Header'
   export default {
-    methods: {
-      pathTo(path) {
+    methods:{
+      toLogin(path) {
         this.$router.replace(path)
-      },
-      toSearch () {
-        this.$router.push('/search')
       }
     },
+    components: {
+      HeaderReuse
+    }
   }
 </script>
 
@@ -76,58 +70,6 @@
   .container
     width 100%
     height 100%
-    .header-detail
-      bottom-border-1px(#e4e4e4)
-      width 100%
-      height .44rem
-      position fixed
-      top 0
-      z-index 11
-      background-color white
-      .header-top
-        width 100%
-        height 100%
-        position relative
-        .home
-          position absolute
-          left .12rem
-          top .1rem
-          width .24rem
-          height .22rem
-          background url(//yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/sprites/hd-s342878591a-9af1a97852.png)
-          background-size .86rem 1.99rem
-          background-position 0 -.38rem
-        .logo
-          width .86rem
-          height .27rem
-          position absolute
-          top 0
-          bottom 0
-          left 0
-          right 0
-          margin auto
-          background url(//yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/sprites/hd-s342878591a-9af1a97852.png)
-          background-size .86rem 1.99rem
-          background-position 0 -.65rem
-        .search
-          width .32rem
-          height .32rem
-          position absolute
-          top .1rem
-          right .5rem
-          background url(//yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/sprites/hd-s342878591a-9af1a97852.png)
-          background-size .86rem 1.99rem
-          background-position 0 -1.7rem
-        .cart
-          width .32rem
-          height .32rem
-          position absolute
-          top .1rem
-          right .1rem
-          background url(//yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/sprites/hd-s342878591a-9af1a97852.png)
-          background-size .86rem 1.99rem
-          background-position 0 -.03rem
-
     .main
       width 100%
       height 100%

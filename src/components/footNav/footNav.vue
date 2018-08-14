@@ -1,5 +1,5 @@
 <template>
-<footer class="foot-nav border-1px" v-if="this.$route.path !== '/personal'">
+<footer class="foot-nav border-1px">
   <div class="foot-item" @click="goto ('/home')" :class="{on: isOn('/home')}">
     <span class="icon-item">
       <i class="iconfont icon-shouye1"></i>

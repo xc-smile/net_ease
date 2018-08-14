@@ -1,5 +1,7 @@
 <template>
   <div>
+    <mask-layer />
+    <to-top />
     <header class="header-top">
       <div class="logo-search">
         <div class="logo">
@@ -115,6 +117,8 @@
   import ItemList from '../../components/itemList/ItemList'
   import PopularItemList from '../../components/popularItemList/PopularItemList'
   import GoodList from '../../components/goodList/GoodList'
+  import MaskLayer from '../../components/maskLayer/MaskLayer'
+  import ToTop from '../../components/toTop/ToTop'
 
   export default {
     data() {
@@ -154,7 +158,8 @@
             scrollX: true,
             eventPassthrough: true
           })
-        })
+          window.scrollTo(0,0)
+        });
       }
     },
     components: {
@@ -162,7 +167,9 @@
       Carousel,
       ItemList,
       PopularItemList,
-      GoodList
+      GoodList,
+      MaskLayer,
+      ToTop
     },
 
   }
