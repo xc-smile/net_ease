@@ -1,3 +1,6 @@
 export default {
-  bannerList: []
+  bannerList: [],
+  homeData: {},
+  knowData: {},
+  classifyData: [],
 }

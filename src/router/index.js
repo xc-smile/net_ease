@@ -8,6 +8,7 @@ import ShopCart from '../pages/shopCart'
 import Personal from '../pages/personal'
 import DownLoad from '../pages/downLoad'
 import Search from '../pages/search'
+import ClassifyItem from '../pages/classify/classifyItem/ClassifyItem'
 
 
 
@@ -15,6 +16,10 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path: '/',
+      redirect: '/home'
+    },
     {
       path: '/home',
       component: Home
@@ -29,7 +34,13 @@ export default new Router({
     },
     {
       path: '/classify',
-      component: Classify
+      component: Classify,
+      children: [
+        {
+        path: 'classifyitem/:id',
+        component: ClassifyItem,
+      }
+      ]
     },
     {
       path: '/personal',

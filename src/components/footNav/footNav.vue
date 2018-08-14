@@ -1,5 +1,5 @@
 <template>
-<footer class="foot-nav border-1px">
+<footer class="foot-nav border-1px" v-if="this.$route.path !== '/personal'">
   <div class="foot-item" @click="goto ('/home')" :class="{on: isOn('/home')}">
     <span class="icon-item">
       <i class="iconfont icon-shouye1"></i>
@@ -40,7 +40,8 @@
         this.$router.replace(path)
       },
       isOn(path) {
-        return this.$route.path === path;
+        const reg = /^\/[a-z]+/;
+        return this.$route.path.match(reg)[0] === path;
       }
     }
   }

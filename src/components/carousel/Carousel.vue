@@ -4,7 +4,6 @@
       <div class="swiper-slide" v-for="(banner, index) in bannerList" :key="index">
         <img :src="banner.picUrl" alt="">
       </div>
-
     </div>
     <!-- Add Pagination -->
     <div class="swiper-pagination"></div>
@@ -20,16 +19,19 @@
       ...mapState(['bannerList'])
     },
     mounted () {
-      this.$nextTick(() => {
-        setTimeout(() => {
-          new Swiper('.swiper-container',{
+
+    },
+    watch: {
+      bannerList(value){
+        this.$nextTick(function () {
+          new Swiper('.swiper-container', {
             pagination: {
               el: '.swiper-pagination',
             },
             autoplay: true
           })
-        },1000)
-      })
+        })
+      }
     }
   }
 </script>
@@ -38,7 +40,7 @@
   @import "../../common/stylus/mixins.styl"
   .swiper-container
     width 100%
-    height 2rem
+    height 100%
     .swiper-wrapper
       width 100%
       height 100%

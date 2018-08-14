@@ -23,7 +23,8 @@
       this.$nextTick(() => {
         new BScroll('.header-nav', {
           click: true,
-          scrollX: true
+          scrollX: true,
+          eventPassthrough: true
         })
       })
     },
@@ -50,7 +51,7 @@
       .active
         color #b4282d
         position relative
-        &:after{
+        &:after
           content ''
           left 0
           bottom 0
@@ -58,5 +59,4 @@
           width 100%
           height .02rem
           background-color #b4282d
-        }
 </style>

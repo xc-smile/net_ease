@@ -19,7 +19,8 @@
       "level": null,
       "name": "推荐专区",
       "showIndex": 9,
-      "subCateList": [{
+      "subCateList": [
+        {
         "bannerUrl": "http://yanxuan.nosdn.127.net/1fa42bd292337aaaf80612b6e208099b.png",
         "extra": null,
         "frontDesc": "",
@@ -35,7 +36,8 @@
         "type": 3,
         "wapBannerUrl": "http://yanxuan.nosdn.127.net/1fa42bd292337aaaf80612b6e208099b.png",
         "wapExpandPicTargetUrl": ""
-      }, {
+      },
+        {
         "bannerUrl": "http://yanxuan.nosdn.127.net/067c602f11acdbc766a35e2ba516a517.png",
         "extra": null,
         "frontDesc": "",
