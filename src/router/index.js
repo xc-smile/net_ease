@@ -78,10 +78,4 @@ export default new Router({
       component: Search
     },
   ],
-  scrollBehavior (to, from, savedPosition) {
-   return {
-     x: 0,
-     y: 0
-   }
-  }
 })

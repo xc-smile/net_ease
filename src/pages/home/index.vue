@@ -131,7 +131,7 @@
     methods: {
       countDown() {
         let a = new Date();
-        let aa = new Date(2018, 8, 14);
+        let aa = new Date(2018, 8, 28);
         this.second = parseInt((aa - a) / 1000 % 60);
         this.minute = parseInt((aa - a) / 1000 / 60 % 60);
         this.hours = parseInt((aa - a) / 1000 / 60 / 60 % 24);
